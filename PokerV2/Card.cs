@@ -8,8 +8,8 @@ namespace PokerV2
 {
     class Card  
     {
-        protected String face;
-        protected String suit;
+        public String face;
+        public String suit;
         
         //constructor to initialie card
         public Card(string cardFace, string cardSuit)

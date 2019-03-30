@@ -120,6 +120,7 @@
             this.evaluationButton.TabIndex = 7;
             this.evaluationButton.Text = "Evaluate Hand";
             this.evaluationButton.UseVisualStyleBackColor = true;
+            this.evaluationButton.Click += new System.EventHandler(this.evaluationButton_Click);
             // 
             // evaluationLabel
             // 

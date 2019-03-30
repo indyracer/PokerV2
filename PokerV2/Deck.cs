@@ -14,8 +14,8 @@ namespace PokerV2
         //constructor
         public Deck()
         {
-            string [] faces = { "Ace", "Deuce", "Three", "Four", "Five", "Six", "Seven", "Eight",
-                "Nine", "Ten", "Jack", "Queen", "King" };
+            string [] faces = { "Deuce", "Three", "Four", "Five", "Six", "Seven", "Eight",
+                "Nine", "Ten", "Jack", "Queen", "King", "Ace" };
             string[] suits = { "Hearts", "Diamonds", "Clubs", "Spades" };
 
             deck = new Card[52];  
