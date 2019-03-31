@@ -23,6 +23,9 @@ namespace PokerV2
 
         public void ShuffleButton_Click(object sender, EventArgs e)
         {
+            //clear previous EvaluationLabel value
+            evaluationLabel.Text = "";
+
             Deck deck = new Deck();
             deck.Shuffle();
 
@@ -51,9 +54,7 @@ namespace PokerV2
         public void evaluationButton_Click(object sender, EventArgs e)
         {
             //call methods to evaluate hand here
-            IsPair(hand);
-            IsTwoPair(hand);
-
+          
             if (IsPair(hand))
             {
                 evaluationLabel.Text = "Pair";
@@ -62,9 +63,37 @@ namespace PokerV2
             {
                 evaluationLabel.Text = "Two Pair";
             }
+            else if (IsThreeOfKind(hand))
+            {
+                evaluationLabel.Text = "Three of a Kind";
+            }
+            else if (IsFourOfKind(hand))
+            {
+                evaluationLabel.Text = "Four of Kind";
+            }
+            else if (IsFullHouse(hand))
+            {
+                evaluationLabel.Text = "Full House";
+            }
+            else if(IsStraight(hand) && !IsFlush(hand))
+            {
+                evaluationLabel.Text = "Straight";
+            }
+            else if(IsStraight(hand) && IsFlush(hand) && !IsRoyalFlush(hand))
+            {
+                evaluationLabel.Text = "Straight Flush";
+            }
+            else if (IsRoyalFlush(hand))
+            {
+                evaluationLabel.Text = "Royal Flush";
+            }
+            else if (IsFlush(hand))
+            {
+                evaluationLabel.Text = "Flush";
+            }
             else
             {
-                evaluationLabel.Text = "Still writting methods to evaluate hands";
+                evaluationLabel.Text = "High Card";
             }
 
         }
@@ -165,7 +194,7 @@ namespace PokerV2
             int[] score = FaceScore(hand);
             //run through hand, check if only 1 faceScore == 2 and 3 other faceScores == 1
             int countTwo = 0, countOne = 0, countOther = 0;
-            for(int i = 0; i < hand.Length; i++)
+            for(int i = 0; i < score.Length; i++)
             {
                 if(score[i] == 2)
                 {
@@ -219,5 +248,153 @@ namespace PokerV2
 
             return isTwoPair;
         }
+
+        //evaluate three of a kind here.
+        internal static Boolean IsThreeOfKind(Card[] hand)
+        {
+            //look at scores, looking for one face of 3, and 2 of 1
+            Boolean isThreeKind = false;
+            int[] scores = FaceScore(hand);
+            int countThree = 0, countOne = 0, countOther = 0;
+
+            for(int i = 0; i < scores.Length; i++)
+            {
+                if(scores[i] == 3)
+                {
+                    countThree++;
+                }
+                else if (scores[i] == 1)
+                {
+                    countOne++;
+                }
+                else
+                {
+                    countOther++;
+                }
+            }
+
+            if(countThree == 1 && countOne == 2)
+            {
+                isThreeKind = true;
+            }
+
+            return isThreeKind;
+        }
+
+        //evaluate four of a kind
+        internal static Boolean IsFourOfKind(Card[] hand)
+        {
+            //look at scores, should be 1 with count of 4, and 1 with count of 1
+            Boolean isFourKind = false;
+            int [] scores = FaceScore(hand);
+
+            int countFour = 0, countOne = 0, countOther = 0;
+
+            for(int i = 0; i < scores.Length; i++)
+            {
+                if(scores[i] == 4)
+                {
+                    countFour++;
+                }
+                else if (scores[i] == 1)
+                {
+                    countOne++;
+                }
+                else
+                {
+                    countOther++;
+                }
+            }
+
+            if(countFour == 1 && countOne == 1)
+            {
+                isFourKind = true;
+            }
+
+            return isFourKind;
+        }
+
+        //evaluate if Full House START HERE
+        internal static Boolean IsFullHouse(Card [] hand)
+        {
+            //look at scores...looking for 1 count == 3, 1 count == 2
+            Boolean isFullHouse = false;
+            int[] scores = FaceScore(hand);
+            int countTwo = 0, countThree = 0, countOther = 0;
+
+            for(int i = 0; i < scores.Length; i++)
+            {
+                if (scores[i] == 2)
+                {
+                    countTwo++;
+                }
+                else if(scores[i] == 3)
+                {
+                    countThree++;
+                }
+                else
+                {
+                    countOther++;
+                }
+            }
+
+            if(countTwo == 1 && countThree == 1)
+            {
+                isFullHouse = true;
+            }
+
+            return isFullHouse;
+        }
+
+        //evaluate if flush
+        internal static Boolean IsFlush(Card [] hand)
+        {
+            Boolean isFlush = false;
+            int[] scores = SuitScore(hand);
+
+            for(int i = 0; i < scores.Length; i++)
+            {
+                if(scores[i] == 5)
+                {
+                    isFlush = true;
+                }
+            }
+
+            return isFlush;
+           
+        }
+
+        //evaluation if straight
+        internal static Boolean IsStraight(Card [] hand)
+        {
+            Boolean isStraight = false;
+
+            int [] scores = FaceScore(hand);
+            //loop through face scores...look for 5 consectutive indices with score 1
+            //only need to loop through first 8 indices...index 8 is highest starting index for a straight
+            for(int i = 0; i <= 8; i++)
+            {
+                if(scores[i] == 1 && scores[i + 1] == 1 && scores[i + 2] == 1 && 
+                    scores[i + 3] == 1 && scores[i + 4] == 1)
+                {
+                    isStraight = true;
+                    break;
+                }
+            }
+
+            return isStraight;
+        }
+
+        //evaluate if royal flush
+        internal static Boolean IsRoyalFlush(Card [] hand)
+        {
+            //look if straight ends with ace, which is index 12
+            int[] scores = FaceScore(hand);
+            Boolean isRoyalFlush = (IsStraight(hand) && scores[12] == 1 && IsFlush(hand)) ?
+                true : false;
+
+            return isRoyalFlush;
+        }
     }
+
 }
