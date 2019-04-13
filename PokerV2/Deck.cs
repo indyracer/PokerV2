@@ -11,6 +11,10 @@ namespace PokerV2
         protected Card [] deck;
         protected int currentCard = -1;
 
+        //create dictionary of images
+        //setup a method to get the image for a card, compare the card.face and card.suit values to the 
+        //dictionary key values??
+
         //constructor
         public Deck()
         {

@@ -41,6 +41,7 @@ namespace PokerV2
             hand[3] = dealt4;
             hand[4] = dealt5;
 
+            
             card1.Text = hand[0].DisplayCard();
             card2.Text = hand[1].DisplayCard();
             card3.Text = hand[2].DisplayCard();
