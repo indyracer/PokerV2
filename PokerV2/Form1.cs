@@ -24,61 +24,6 @@ namespace PokerV2
         public Form1()
         {
             InitializeComponent();
-            //initalize card images array and add the cards
-            cardImages = new Image[52];
-            cardImages[0] = Image.FromFile(path + "2_of_clubs.png");
-            cardImages[1] = Image.FromFile(path + "3_of_clubs.png");
-            cardImages[2] = Image.FromFile(path + "4_of_clubs.png");
-            cardImages[3] = Image.FromFile(path + "5_of_clubs.png");
-            cardImages[4] = Image.FromFile(path + "6_of_clubs.png");
-            cardImages[5] = Image.FromFile(path + "7_of_clubs.png");
-            cardImages[6] = Image.FromFile(path + "8_of_clubs.png");
-            cardImages[7] = Image.FromFile(path + "9_of_clubs.png");
-            cardImages[8] = Image.FromFile(path + "10_of_clubs.png");
-            cardImages[9] = Image.FromFile(path + "jack_of_clubs.png");
-            cardImages[10] = Image.FromFile(path + "queen_of_clubs.png");
-            cardImages[11] = Image.FromFile(path + "king_of_clubs.png");
-            cardImages[12] = Image.FromFile(path + "ace_of_clubs.png");
-            cardImages[13] = Image.FromFile(path + "2_of_diamonds.png");
-            cardImages[14] = Image.FromFile(path + "3_of_diamonds.png");
-            cardImages[15] = Image.FromFile(path + "4_of_diamonds.png");
-            cardImages[16] = Image.FromFile(path + "5_of_diamonds.png");
-            cardImages[17] = Image.FromFile(path + "6_of_diamonds.png");
-            cardImages[18] = Image.FromFile(path + "7_of_diamonds.png");
-            cardImages[19] = Image.FromFile(path + "8_of_diamonds.png");
-            cardImages[20] = Image.FromFile(path + "9_of_diamonds.png");
-            cardImages[21] = Image.FromFile(path + "10_of_diamonds.png");
-            cardImages[22] = Image.FromFile(path + "jack_of_diamonds.png");
-            cardImages[23] = Image.FromFile(path + "queen_of_diamonds.png");
-            cardImages[24] = Image.FromFile(path + "king_of_diamonds.png");
-            cardImages[25] = Image.FromFile(path + "ace_of_diamonds.png");
-            cardImages[26] = Image.FromFile(path + "2_of_hearts.png");
-            cardImages[27] = Image.FromFile(path + "3_of_hearts.png");
-            cardImages[28] = Image.FromFile(path + "4_of_hearts.png");
-            cardImages[29] = Image.FromFile(path + "5_of_hearts.png");
-            cardImages[30] = Image.FromFile(path + "6_of_hearts.png");
-            cardImages[31] = Image.FromFile(path + "7_of_hearts.png");
-            cardImages[32] = Image.FromFile(path + "8_of_hearts.png");
-            cardImages[33] = Image.FromFile(path + "9_of_hearts.png");
-            cardImages[34] = Image.FromFile(path + "10_of_hearts.png");
-            cardImages[35] = Image.FromFile(path + "jack_of_hearts.png");
-            cardImages[36] = Image.FromFile(path + "queen_of_hearts.png");
-            cardImages[37] = Image.FromFile(path + "king_of_hearts.png");
-            cardImages[38] = Image.FromFile(path + "ace_of_hearts.png");
-            cardImages[26] = Image.FromFile(path + "2_of_spades.png");
-            cardImages[27] = Image.FromFile(path + "3_of_spades.png");
-            cardImages[28] = Image.FromFile(path + "4_of_spades.png");
-            cardImages[29] = Image.FromFile(path + "5_of_spades.png");
-            cardImages[30] = Image.FromFile(path + "6_of_spades.png");
-            cardImages[31] = Image.FromFile(path + "7_of_spades.png");
-            cardImages[32] = Image.FromFile(path + "8_of_spades.png");
-            cardImages[33] = Image.FromFile(path + "9_of_spades.png");
-            cardImages[34] = Image.FromFile(path + "10_of_spades.png");
-            cardImages[35] = Image.FromFile(path + "jack_of_spades.png");
-            cardImages[36] = Image.FromFile(path + "queen_of_spades.png");
-            cardImages[37] = Image.FromFile(path + "king_of_spades.png");
-            cardImages[38] = Image.FromFile(path + "ace_of_spades.png");
-
         }
 
 
