@@ -33,5 +33,10 @@ namespace PokerV2
         {
             return face + " of " + suit;
         }
+
+        public String ImageName()
+        {
+            return face.ToLower() + "_of_" + suit.ToLower() + ".png";
+        }
     }
 }

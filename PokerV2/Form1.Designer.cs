@@ -37,16 +37,16 @@
             this.evaluationButton = new System.Windows.Forms.Button();
             this.evaluationLabel = new System.Windows.Forms.TextBox();
             this.card1 = new System.Windows.Forms.TextBox();
-            this.card1pic = new System.Windows.Forms.PictureBox();
-            this.card2pic = new System.Windows.Forms.PictureBox();
-            this.card3pic = new System.Windows.Forms.PictureBox();
-            this.card4pic = new System.Windows.Forms.PictureBox();
-            this.card5pic = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.card1pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.card2pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.card3pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.card4pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.card5pic)).BeginInit();
+            this.cardPic1 = new System.Windows.Forms.PictureBox();
+            this.cardPic2 = new System.Windows.Forms.PictureBox();
+            this.cardPic3 = new System.Windows.Forms.PictureBox();
+            this.cardPic4 = new System.Windows.Forms.PictureBox();
+            this.cardPic5 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.cardPic1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardPic2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardPic3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardPic4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardPic5)).BeginInit();
             this.SuspendLayout();
             // 
             // card3
@@ -131,6 +131,7 @@
             this.evaluationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.evaluationLabel.Location = new System.Drawing.Point(203, 321);
             this.evaluationLabel.Name = "evaluationLabel";
+            this.evaluationLabel.ReadOnly = true;
             this.evaluationLabel.Size = new System.Drawing.Size(533, 26);
             this.evaluationLabel.TabIndex = 8;
             this.evaluationLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -146,56 +147,61 @@
             this.card1.TabIndex = 9;
             this.card1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // card1pic
+            // cardPic1
             // 
-            this.card1pic.Location = new System.Drawing.Point(203, 140);
-            this.card1pic.Name = "card1pic";
-            this.card1pic.Size = new System.Drawing.Size(91, 123);
-            this.card1pic.TabIndex = 10;
-            this.card1pic.TabStop = false;
+            this.cardPic1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.cardPic1.Location = new System.Drawing.Point(203, 140);
+            this.cardPic1.Name = "cardPic1";
+            this.cardPic1.Size = new System.Drawing.Size(91, 123);
+            this.cardPic1.TabIndex = 10;
+            this.cardPic1.TabStop = false;
             // 
-            // card2pic
+            // cardPic2
             // 
-            this.card2pic.Location = new System.Drawing.Point(314, 140);
-            this.card2pic.Name = "card2pic";
-            this.card2pic.Size = new System.Drawing.Size(91, 123);
-            this.card2pic.TabIndex = 11;
-            this.card2pic.TabStop = false;
+            this.cardPic2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.cardPic2.Location = new System.Drawing.Point(314, 140);
+            this.cardPic2.Name = "cardPic2";
+            this.cardPic2.Size = new System.Drawing.Size(91, 123);
+            this.cardPic2.TabIndex = 11;
+            this.cardPic2.TabStop = false;
             // 
-            // card3pic
+            // cardPic3
             // 
-            this.card3pic.Location = new System.Drawing.Point(425, 140);
-            this.card3pic.Name = "card3pic";
-            this.card3pic.Size = new System.Drawing.Size(91, 123);
-            this.card3pic.TabIndex = 12;
-            this.card3pic.TabStop = false;
+            this.cardPic3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.cardPic3.Location = new System.Drawing.Point(425, 140);
+            this.cardPic3.Name = "cardPic3";
+            this.cardPic3.Size = new System.Drawing.Size(91, 123);
+            this.cardPic3.TabIndex = 12;
+            this.cardPic3.TabStop = false;
             // 
-            // card4pic
+            // cardPic4
             // 
-            this.card4pic.Location = new System.Drawing.Point(536, 140);
-            this.card4pic.Name = "card4pic";
-            this.card4pic.Size = new System.Drawing.Size(91, 123);
-            this.card4pic.TabIndex = 13;
-            this.card4pic.TabStop = false;
+            this.cardPic4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.cardPic4.Location = new System.Drawing.Point(536, 140);
+            this.cardPic4.Name = "cardPic4";
+            this.cardPic4.Size = new System.Drawing.Size(91, 123);
+            this.cardPic4.TabIndex = 13;
+            this.cardPic4.TabStop = false;
             // 
-            // card5pic
+            // cardPic5
             // 
-            this.card5pic.Location = new System.Drawing.Point(646, 140);
-            this.card5pic.Name = "card5pic";
-            this.card5pic.Size = new System.Drawing.Size(91, 123);
-            this.card5pic.TabIndex = 14;
-            this.card5pic.TabStop = false;
+            this.cardPic5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.cardPic5.Location = new System.Drawing.Point(646, 140);
+            this.cardPic5.Name = "cardPic5";
+            this.cardPic5.Size = new System.Drawing.Size(91, 123);
+            this.cardPic5.TabIndex = 14;
+            this.cardPic5.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.card5pic);
-            this.Controls.Add(this.card4pic);
-            this.Controls.Add(this.card3pic);
-            this.Controls.Add(this.card2pic);
-            this.Controls.Add(this.card1pic);
+            this.Controls.Add(this.cardPic5);
+            this.Controls.Add(this.cardPic4);
+            this.Controls.Add(this.cardPic3);
+            this.Controls.Add(this.cardPic2);
+            this.Controls.Add(this.cardPic1);
             this.Controls.Add(this.card1);
             this.Controls.Add(this.evaluationLabel);
             this.Controls.Add(this.evaluationButton);
@@ -207,11 +213,11 @@
             this.Controls.Add(this.card3);
             this.Name = "Form1";
             this.Text = "Poker Evaluation";
-            ((System.ComponentModel.ISupportInitialize)(this.card1pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.card2pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.card3pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.card4pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.card5pic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardPic1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardPic2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardPic3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardPic4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardPic5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,11 +233,11 @@
         private System.Windows.Forms.Button evaluationButton;
         private System.Windows.Forms.TextBox evaluationLabel;
         private System.Windows.Forms.TextBox card1;
-        private System.Windows.Forms.PictureBox card1pic;
-        private System.Windows.Forms.PictureBox card2pic;
-        private System.Windows.Forms.PictureBox card3pic;
-        private System.Windows.Forms.PictureBox card4pic;
-        private System.Windows.Forms.PictureBox card5pic;
+        private System.Windows.Forms.PictureBox cardPic1;
+        private System.Windows.Forms.PictureBox cardPic2;
+        private System.Windows.Forms.PictureBox cardPic3;
+        private System.Windows.Forms.PictureBox cardPic4;
+        private System.Windows.Forms.PictureBox cardPic5;
     }
 }
 

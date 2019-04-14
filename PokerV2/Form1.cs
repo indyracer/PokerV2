@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PokerV2
 {
@@ -14,12 +15,72 @@ namespace PokerV2
     {
 
         Card [] hand = new Card[5];
+        //path to get images
+        public const string path = @"C:\\Users\\bobco\\source\\repos\\PokerV2\\PokerV2\\Resources\\";
+        //Array to hold pictures of cards
+        Image[] cardImages;
        
 
         public Form1()
         {
             InitializeComponent();
+            //initalize card images array and add the cards
+            cardImages = new Image[52];
+            cardImages[0] = Image.FromFile(path + "2_of_clubs.png");
+            cardImages[1] = Image.FromFile(path + "3_of_clubs.png");
+            cardImages[2] = Image.FromFile(path + "4_of_clubs.png");
+            cardImages[3] = Image.FromFile(path + "5_of_clubs.png");
+            cardImages[4] = Image.FromFile(path + "6_of_clubs.png");
+            cardImages[5] = Image.FromFile(path + "7_of_clubs.png");
+            cardImages[6] = Image.FromFile(path + "8_of_clubs.png");
+            cardImages[7] = Image.FromFile(path + "9_of_clubs.png");
+            cardImages[8] = Image.FromFile(path + "10_of_clubs.png");
+            cardImages[9] = Image.FromFile(path + "jack_of_clubs.png");
+            cardImages[10] = Image.FromFile(path + "queen_of_clubs.png");
+            cardImages[11] = Image.FromFile(path + "king_of_clubs.png");
+            cardImages[12] = Image.FromFile(path + "ace_of_clubs.png");
+            cardImages[13] = Image.FromFile(path + "2_of_diamonds.png");
+            cardImages[14] = Image.FromFile(path + "3_of_diamonds.png");
+            cardImages[15] = Image.FromFile(path + "4_of_diamonds.png");
+            cardImages[16] = Image.FromFile(path + "5_of_diamonds.png");
+            cardImages[17] = Image.FromFile(path + "6_of_diamonds.png");
+            cardImages[18] = Image.FromFile(path + "7_of_diamonds.png");
+            cardImages[19] = Image.FromFile(path + "8_of_diamonds.png");
+            cardImages[20] = Image.FromFile(path + "9_of_diamonds.png");
+            cardImages[21] = Image.FromFile(path + "10_of_diamonds.png");
+            cardImages[22] = Image.FromFile(path + "jack_of_diamonds.png");
+            cardImages[23] = Image.FromFile(path + "queen_of_diamonds.png");
+            cardImages[24] = Image.FromFile(path + "king_of_diamonds.png");
+            cardImages[25] = Image.FromFile(path + "ace_of_diamonds.png");
+            cardImages[26] = Image.FromFile(path + "2_of_hearts.png");
+            cardImages[27] = Image.FromFile(path + "3_of_hearts.png");
+            cardImages[28] = Image.FromFile(path + "4_of_hearts.png");
+            cardImages[29] = Image.FromFile(path + "5_of_hearts.png");
+            cardImages[30] = Image.FromFile(path + "6_of_hearts.png");
+            cardImages[31] = Image.FromFile(path + "7_of_hearts.png");
+            cardImages[32] = Image.FromFile(path + "8_of_hearts.png");
+            cardImages[33] = Image.FromFile(path + "9_of_hearts.png");
+            cardImages[34] = Image.FromFile(path + "10_of_hearts.png");
+            cardImages[35] = Image.FromFile(path + "jack_of_hearts.png");
+            cardImages[36] = Image.FromFile(path + "queen_of_hearts.png");
+            cardImages[37] = Image.FromFile(path + "king_of_hearts.png");
+            cardImages[38] = Image.FromFile(path + "ace_of_hearts.png");
+            cardImages[26] = Image.FromFile(path + "2_of_spades.png");
+            cardImages[27] = Image.FromFile(path + "3_of_spades.png");
+            cardImages[28] = Image.FromFile(path + "4_of_spades.png");
+            cardImages[29] = Image.FromFile(path + "5_of_spades.png");
+            cardImages[30] = Image.FromFile(path + "6_of_spades.png");
+            cardImages[31] = Image.FromFile(path + "7_of_spades.png");
+            cardImages[32] = Image.FromFile(path + "8_of_spades.png");
+            cardImages[33] = Image.FromFile(path + "9_of_spades.png");
+            cardImages[34] = Image.FromFile(path + "10_of_spades.png");
+            cardImages[35] = Image.FromFile(path + "jack_of_spades.png");
+            cardImages[36] = Image.FromFile(path + "queen_of_spades.png");
+            cardImages[37] = Image.FromFile(path + "king_of_spades.png");
+            cardImages[38] = Image.FromFile(path + "ace_of_spades.png");
+
         }
+
 
         public void ShuffleButton_Click(object sender, EventArgs e)
         {
@@ -47,6 +108,12 @@ namespace PokerV2
             card3.Text = hand[2].DisplayCard();
             card4.Text = hand[3].DisplayCard();
             card5.Text = hand[4].DisplayCard();
+
+            cardPic1.Image = DisplayImage(hand[0]);
+            cardPic2.Image = DisplayImage(hand[1]);
+            cardPic3.Image = DisplayImage(hand[2]);
+            cardPic4.Image = DisplayImage(hand[3]);
+            cardPic5.Image = DisplayImage(hand[4]);
             
 
 
@@ -139,31 +206,31 @@ namespace PokerV2
             {
                 switch (hand[i].GetCardFace())
                 {
-                    case "Duece":
+                    case "2":
                         dueceScore++;
                         break;
-                    case "Three":
+                    case "3":
                         threeScore++;
                         break;
-                    case "Four":
+                    case "4":
                         fourScore++;
                         break;
-                    case "Five":
+                    case "5":
                         fiveScore++;
                         break;
-                    case "Six":
+                    case "6":
                         sixScore++;
                         break;
-                    case "Seven":
+                    case "7":
                         sevenScore++;
                         break;
-                    case "Eight":
+                    case "8":
                         eightScore++;
                         break;
-                    case "Nine":
+                    case "9":
                         nineScore++;
                         break;
-                    case "Ten":
+                    case "10":
                         tenScore++;
                         break;
                     case "Jack":
@@ -395,6 +462,18 @@ namespace PokerV2
                 true : false;
 
             return isRoyalFlush;
+        }
+
+       
+        
+        //displayImage
+        internal Image DisplayImage(Card card)
+        {
+            //add the imageName of the card to the end of the path
+            Image image = Image.FromFile(path + card.ImageName());
+            return image;
+
+            
         }
     }
 
