@@ -19,8 +19,11 @@ namespace PokerV2
         public const string path = @"C:\\Users\\bobco\\source\\repos\\PokerV2\\PokerV2\\Resources\\";
         //Array to hold pictures of cards
         Image[] cardImages;
+        //creates Deck for playing
+        static Deck deck = new Deck();
        
-
+       
+       
         public Form1()
         {
             InitializeComponent();
@@ -31,11 +34,12 @@ namespace PokerV2
         {
             //clear previous EvaluationLabel value
             evaluationLabel.Text = "";
+            int numPlayers = Int32.Parse(numOfPlayers.Text);
 
-            Deck deck = new Deck();
-            deck.Shuffle();
+            //Deck deck = new Deck();
+            //deck.Shuffle();
 
-            Card dealt1 = deck.DealCard();
+            /*Card dealt1 = deck.DealCard();
             Card dealt2 = deck.DealCard();
             Card dealt3 = deck.DealCard();
             Card dealt4 = deck.DealCard();
@@ -45,21 +49,47 @@ namespace PokerV2
             hand[1] = dealt2;
             hand[2] = dealt3;
             hand[3] = dealt4;
-            hand[4] = dealt5;
+            hand[4] = dealt5; */
 
-            
-            card1.Text = hand[0].DisplayCard();
-            card2.Text = hand[1].DisplayCard();
-            card3.Text = hand[2].DisplayCard();
-            card4.Text = hand[3].DisplayCard();
-            card5.Text = hand[4].DisplayCard();
+            //deal hands to each player
+            //array of player hands
+            Card [][] playerHands = new Card[numPlayers][];
 
-            cardPic1.Image = DisplayImage(hand[0]);
-            cardPic2.Image = DisplayImage(hand[1]);
-            cardPic3.Image = DisplayImage(hand[2]);
-            cardPic4.Image = DisplayImage(hand[3]);
-            cardPic5.Image = DisplayImage(hand[4]);
-            
+            for(int x = 0; x < numPlayers; x++)
+            {
+                Card[] player = DealHands();
+                playerHands[x] = player;
+            }
+
+
+            player1Card1.Text = playerHands[0][0].DisplayCard();
+            player1Card2.Text = playerHands[0][1].DisplayCard();
+            player1Card3.Text = playerHands[0][2].DisplayCard();
+            player1Card4.Text = playerHands[0][3].DisplayCard();
+            player1Card5.Text = playerHands[0][4].DisplayCard();
+
+            player1Pic1.Image = DisplayImage(playerHands[0][0]);
+            player1Pic2.Image = DisplayImage(playerHands[0][1]);
+            player1Pic3.Image = DisplayImage(playerHands[0][2]); 
+            player1Pic4.Image = DisplayImage(playerHands[0][3]);
+            player1Pic5.Image = DisplayImage(playerHands[0][4]);
+
+            if(numPlayers == 2)
+            {
+                player2Card1.Text = playerHands[1][0].DisplayCard();
+                player2Card2.Text = playerHands[1][1].DisplayCard();
+                player2Card3.Text = playerHands[1][2].DisplayCard();
+                player2Card4.Text = playerHands[1][3].DisplayCard();
+                player2Card5.Text = playerHands[1][4].DisplayCard();
+
+                player2Pic1.Image = DisplayImage(playerHands[1][0]);
+                player2Pic2.Image = DisplayImage(playerHands[1][1]);
+                player2Pic3.Image = DisplayImage(playerHands[1][2]);
+                player2Pic4.Image = DisplayImage(playerHands[1][3]);
+                player2Pic5.Image = DisplayImage(playerHands[1][4]);
+            }
+
+
 
 
         }
@@ -67,6 +97,7 @@ namespace PokerV2
         public void evaluationButton_Click(object sender, EventArgs e)
         {
             //call methods to evaluate hand here
+            //need to update to evaluate multiple hands
           
             if (IsPair(hand))
             {
@@ -108,6 +139,23 @@ namespace PokerV2
             {
                 evaluationLabel.Text = "High Card";
             }
+
+        }
+
+        //deal hands
+        internal static Card [] DealHands()
+        {
+            Card[] hand = new Card[5];
+
+            deck.Shuffle();
+
+            hand[0] = deck.DealCard();
+            hand[1] = deck.DealCard();
+            hand[2] = deck.DealCard();
+            hand[3] = deck.DealCard();
+            hand[4] = deck.DealCard();
+
+            return hand;
 
         }
 

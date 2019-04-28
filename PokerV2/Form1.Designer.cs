@@ -28,86 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.card3 = new System.Windows.Forms.TextBox();
-            this.card2 = new System.Windows.Forms.TextBox();
-            this.card4 = new System.Windows.Forms.TextBox();
-            this.card5 = new System.Windows.Forms.TextBox();
-            this.handLabel = new System.Windows.Forms.Label();
+            this.player1Card3 = new System.Windows.Forms.TextBox();
+            this.player1Card2 = new System.Windows.Forms.TextBox();
+            this.player1Card4 = new System.Windows.Forms.TextBox();
+            this.player1Card5 = new System.Windows.Forms.TextBox();
             this.shuffleButton = new System.Windows.Forms.Button();
             this.evaluationButton = new System.Windows.Forms.Button();
             this.evaluationLabel = new System.Windows.Forms.TextBox();
-            this.card1 = new System.Windows.Forms.TextBox();
-            this.cardPic1 = new System.Windows.Forms.PictureBox();
-            this.cardPic2 = new System.Windows.Forms.PictureBox();
-            this.cardPic3 = new System.Windows.Forms.PictureBox();
-            this.cardPic4 = new System.Windows.Forms.PictureBox();
-            this.cardPic5 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.cardPic1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardPic2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardPic3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardPic4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardPic5)).BeginInit();
+            this.player1Card1 = new System.Windows.Forms.TextBox();
+            this.player1Pic1 = new System.Windows.Forms.PictureBox();
+            this.player1Pic2 = new System.Windows.Forms.PictureBox();
+            this.player1Pic3 = new System.Windows.Forms.PictureBox();
+            this.player1Pic4 = new System.Windows.Forms.PictureBox();
+            this.player1Pic5 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numOfPlayers = new System.Windows.Forms.TextBox();
+            this.player2Pic5 = new System.Windows.Forms.PictureBox();
+            this.player2Pic4 = new System.Windows.Forms.PictureBox();
+            this.player2Pic3 = new System.Windows.Forms.PictureBox();
+            this.player2Pic2 = new System.Windows.Forms.PictureBox();
+            this.player2Pic1 = new System.Windows.Forms.PictureBox();
+            this.player2Card1 = new System.Windows.Forms.TextBox();
+            this.player2Card5 = new System.Windows.Forms.TextBox();
+            this.player2Card4 = new System.Windows.Forms.TextBox();
+            this.player2Card2 = new System.Windows.Forms.TextBox();
+            this.player2Card3 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.player1Pic1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player1Pic2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player1Pic3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player1Pic4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player1Pic5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player2Pic5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player2Pic4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player2Pic3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player2Pic2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player2Pic1)).BeginInit();
             this.SuspendLayout();
             // 
-            // card3
+            // player1Card3
             // 
-            this.card3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.card3.Location = new System.Drawing.Point(425, 280);
-            this.card3.Multiline = true;
-            this.card3.Name = "card3";
-            this.card3.ReadOnly = true;
-            this.card3.Size = new System.Drawing.Size(91, 18);
-            this.card3.TabIndex = 1;
-            this.card3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.player1Card3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player1Card3.Location = new System.Drawing.Point(425, 185);
+            this.player1Card3.Multiline = true;
+            this.player1Card3.Name = "player1Card3";
+            this.player1Card3.ReadOnly = true;
+            this.player1Card3.Size = new System.Drawing.Size(91, 18);
+            this.player1Card3.TabIndex = 1;
+            this.player1Card3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // card2
+            // player1Card2
             // 
-            this.card2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.card2.Location = new System.Drawing.Point(314, 280);
-            this.card2.Multiline = true;
-            this.card2.Name = "card2";
-            this.card2.ReadOnly = true;
-            this.card2.Size = new System.Drawing.Size(91, 18);
-            this.card2.TabIndex = 2;
-            this.card2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.player1Card2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player1Card2.Location = new System.Drawing.Point(314, 185);
+            this.player1Card2.Multiline = true;
+            this.player1Card2.Name = "player1Card2";
+            this.player1Card2.ReadOnly = true;
+            this.player1Card2.Size = new System.Drawing.Size(91, 18);
+            this.player1Card2.TabIndex = 2;
+            this.player1Card2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // card4
+            // player1Card4
             // 
-            this.card4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.card4.Location = new System.Drawing.Point(536, 280);
-            this.card4.Multiline = true;
-            this.card4.Name = "card4";
-            this.card4.ReadOnly = true;
-            this.card4.Size = new System.Drawing.Size(91, 18);
-            this.card4.TabIndex = 3;
-            this.card4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.player1Card4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player1Card4.Location = new System.Drawing.Point(536, 185);
+            this.player1Card4.Multiline = true;
+            this.player1Card4.Name = "player1Card4";
+            this.player1Card4.ReadOnly = true;
+            this.player1Card4.Size = new System.Drawing.Size(91, 18);
+            this.player1Card4.TabIndex = 3;
+            this.player1Card4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // card5
+            // player1Card5
             // 
-            this.card5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.card5.Location = new System.Drawing.Point(647, 280);
-            this.card5.Multiline = true;
-            this.card5.Name = "card5";
-            this.card5.ReadOnly = true;
-            this.card5.Size = new System.Drawing.Size(91, 18);
-            this.card5.TabIndex = 4;
-            this.card5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // handLabel
-            // 
-            this.handLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.handLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.handLabel.Location = new System.Drawing.Point(203, 86);
-            this.handLabel.Name = "handLabel";
-            this.handLabel.Size = new System.Drawing.Size(534, 31);
-            this.handLabel.TabIndex = 5;
-            this.handLabel.Text = "Hand";
-            this.handLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.player1Card5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player1Card5.Location = new System.Drawing.Point(647, 185);
+            this.player1Card5.Multiline = true;
+            this.player1Card5.Name = "player1Card5";
+            this.player1Card5.ReadOnly = true;
+            this.player1Card5.Size = new System.Drawing.Size(91, 18);
+            this.player1Card5.TabIndex = 4;
+            this.player1Card5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // shuffleButton
             // 
             this.shuffleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shuffleButton.Location = new System.Drawing.Point(39, 154);
+            this.shuffleButton.Location = new System.Drawing.Point(12, 185);
             this.shuffleButton.Name = "shuffleButton";
             this.shuffleButton.Size = new System.Drawing.Size(119, 31);
             this.shuffleButton.TabIndex = 6;
@@ -118,7 +125,7 @@
             // evaluationButton
             // 
             this.evaluationButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.evaluationButton.Location = new System.Drawing.Point(39, 319);
+            this.evaluationButton.Location = new System.Drawing.Point(12, 407);
             this.evaluationButton.Name = "evaluationButton";
             this.evaluationButton.Size = new System.Drawing.Size(119, 31);
             this.evaluationButton.TabIndex = 7;
@@ -129,115 +136,283 @@
             // evaluationLabel
             // 
             this.evaluationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.evaluationLabel.Location = new System.Drawing.Point(203, 321);
+            this.evaluationLabel.Location = new System.Drawing.Point(203, 412);
             this.evaluationLabel.Name = "evaluationLabel";
             this.evaluationLabel.ReadOnly = true;
             this.evaluationLabel.Size = new System.Drawing.Size(533, 26);
             this.evaluationLabel.TabIndex = 8;
             this.evaluationLabel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // card1
+            // player1Card1
             // 
-            this.card1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.card1.Location = new System.Drawing.Point(203, 280);
-            this.card1.Multiline = true;
-            this.card1.Name = "card1";
-            this.card1.ReadOnly = true;
-            this.card1.Size = new System.Drawing.Size(91, 18);
-            this.card1.TabIndex = 9;
-            this.card1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.player1Card1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player1Card1.Location = new System.Drawing.Point(203, 185);
+            this.player1Card1.Multiline = true;
+            this.player1Card1.Name = "player1Card1";
+            this.player1Card1.ReadOnly = true;
+            this.player1Card1.Size = new System.Drawing.Size(91, 18);
+            this.player1Card1.TabIndex = 9;
+            this.player1Card1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // cardPic1
+            // player1Pic1
             // 
-            this.cardPic1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.cardPic1.Location = new System.Drawing.Point(203, 140);
-            this.cardPic1.Name = "cardPic1";
-            this.cardPic1.Size = new System.Drawing.Size(91, 123);
-            this.cardPic1.TabIndex = 10;
-            this.cardPic1.TabStop = false;
+            this.player1Pic1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.player1Pic1.Location = new System.Drawing.Point(203, 45);
+            this.player1Pic1.Name = "player1Pic1";
+            this.player1Pic1.Size = new System.Drawing.Size(91, 123);
+            this.player1Pic1.TabIndex = 10;
+            this.player1Pic1.TabStop = false;
             // 
-            // cardPic2
+            // player1Pic2
             // 
-            this.cardPic2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.cardPic2.Location = new System.Drawing.Point(314, 140);
-            this.cardPic2.Name = "cardPic2";
-            this.cardPic2.Size = new System.Drawing.Size(91, 123);
-            this.cardPic2.TabIndex = 11;
-            this.cardPic2.TabStop = false;
+            this.player1Pic2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.player1Pic2.Location = new System.Drawing.Point(314, 45);
+            this.player1Pic2.Name = "player1Pic2";
+            this.player1Pic2.Size = new System.Drawing.Size(91, 123);
+            this.player1Pic2.TabIndex = 11;
+            this.player1Pic2.TabStop = false;
             // 
-            // cardPic3
+            // player1Pic3
             // 
-            this.cardPic3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.cardPic3.Location = new System.Drawing.Point(425, 140);
-            this.cardPic3.Name = "cardPic3";
-            this.cardPic3.Size = new System.Drawing.Size(91, 123);
-            this.cardPic3.TabIndex = 12;
-            this.cardPic3.TabStop = false;
+            this.player1Pic3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.player1Pic3.Location = new System.Drawing.Point(425, 45);
+            this.player1Pic3.Name = "player1Pic3";
+            this.player1Pic3.Size = new System.Drawing.Size(91, 123);
+            this.player1Pic3.TabIndex = 12;
+            this.player1Pic3.TabStop = false;
             // 
-            // cardPic4
+            // player1Pic4
             // 
-            this.cardPic4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.cardPic4.Location = new System.Drawing.Point(536, 140);
-            this.cardPic4.Name = "cardPic4";
-            this.cardPic4.Size = new System.Drawing.Size(91, 123);
-            this.cardPic4.TabIndex = 13;
-            this.cardPic4.TabStop = false;
+            this.player1Pic4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.player1Pic4.Location = new System.Drawing.Point(536, 45);
+            this.player1Pic4.Name = "player1Pic4";
+            this.player1Pic4.Size = new System.Drawing.Size(91, 123);
+            this.player1Pic4.TabIndex = 13;
+            this.player1Pic4.TabStop = false;
             // 
-            // cardPic5
+            // player1Pic5
             // 
-            this.cardPic5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.cardPic5.Location = new System.Drawing.Point(646, 140);
-            this.cardPic5.Name = "cardPic5";
-            this.cardPic5.Size = new System.Drawing.Size(91, 123);
-            this.cardPic5.TabIndex = 14;
-            this.cardPic5.TabStop = false;
+            this.player1Pic5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.player1Pic5.Location = new System.Drawing.Point(646, 45);
+            this.player1Pic5.Name = "player1Pic5";
+            this.player1Pic5.Size = new System.Drawing.Size(91, 123);
+            this.player1Pic5.TabIndex = 14;
+            this.player1Pic5.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(39, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 47);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Number of Players\r\n(Max 2)";
+            this.label1.UseMnemonic = false;
+            // 
+            // numOfPlayers
+            // 
+            this.numOfPlayers.Location = new System.Drawing.Point(203, 13);
+            this.numOfPlayers.Name = "numOfPlayers";
+            this.numOfPlayers.Size = new System.Drawing.Size(100, 20);
+            this.numOfPlayers.TabIndex = 16;
+            // 
+            // player2Pic5
+            // 
+            this.player2Pic5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.player2Pic5.Location = new System.Drawing.Point(646, 209);
+            this.player2Pic5.Name = "player2Pic5";
+            this.player2Pic5.Size = new System.Drawing.Size(91, 123);
+            this.player2Pic5.TabIndex = 26;
+            this.player2Pic5.TabStop = false;
+            // 
+            // player2Pic4
+            // 
+            this.player2Pic4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.player2Pic4.Location = new System.Drawing.Point(536, 209);
+            this.player2Pic4.Name = "player2Pic4";
+            this.player2Pic4.Size = new System.Drawing.Size(91, 123);
+            this.player2Pic4.TabIndex = 25;
+            this.player2Pic4.TabStop = false;
+            // 
+            // player2Pic3
+            // 
+            this.player2Pic3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.player2Pic3.Location = new System.Drawing.Point(425, 209);
+            this.player2Pic3.Name = "player2Pic3";
+            this.player2Pic3.Size = new System.Drawing.Size(91, 123);
+            this.player2Pic3.TabIndex = 24;
+            this.player2Pic3.TabStop = false;
+            // 
+            // player2Pic2
+            // 
+            this.player2Pic2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.player2Pic2.Location = new System.Drawing.Point(314, 209);
+            this.player2Pic2.Name = "player2Pic2";
+            this.player2Pic2.Size = new System.Drawing.Size(91, 123);
+            this.player2Pic2.TabIndex = 23;
+            this.player2Pic2.TabStop = false;
+            // 
+            // player2Pic1
+            // 
+            this.player2Pic1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.player2Pic1.Location = new System.Drawing.Point(203, 209);
+            this.player2Pic1.Name = "player2Pic1";
+            this.player2Pic1.Size = new System.Drawing.Size(91, 123);
+            this.player2Pic1.TabIndex = 22;
+            this.player2Pic1.TabStop = false;
+            // 
+            // player2Card1
+            // 
+            this.player2Card1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player2Card1.Location = new System.Drawing.Point(203, 349);
+            this.player2Card1.Multiline = true;
+            this.player2Card1.Name = "player2Card1";
+            this.player2Card1.ReadOnly = true;
+            this.player2Card1.Size = new System.Drawing.Size(91, 18);
+            this.player2Card1.TabIndex = 21;
+            this.player2Card1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // player2Card5
+            // 
+            this.player2Card5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player2Card5.Location = new System.Drawing.Point(647, 349);
+            this.player2Card5.Multiline = true;
+            this.player2Card5.Name = "player2Card5";
+            this.player2Card5.ReadOnly = true;
+            this.player2Card5.Size = new System.Drawing.Size(91, 18);
+            this.player2Card5.TabIndex = 20;
+            this.player2Card5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // player2Card4
+            // 
+            this.player2Card4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player2Card4.Location = new System.Drawing.Point(536, 349);
+            this.player2Card4.Multiline = true;
+            this.player2Card4.Name = "player2Card4";
+            this.player2Card4.ReadOnly = true;
+            this.player2Card4.Size = new System.Drawing.Size(91, 18);
+            this.player2Card4.TabIndex = 19;
+            this.player2Card4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // player2Card2
+            // 
+            this.player2Card2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player2Card2.Location = new System.Drawing.Point(314, 349);
+            this.player2Card2.Multiline = true;
+            this.player2Card2.Name = "player2Card2";
+            this.player2Card2.ReadOnly = true;
+            this.player2Card2.Size = new System.Drawing.Size(91, 18);
+            this.player2Card2.TabIndex = 18;
+            this.player2Card2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // player2Card3
+            // 
+            this.player2Card3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player2Card3.Location = new System.Drawing.Point(425, 349);
+            this.player2Card3.Multiline = true;
+            this.player2Card3.Name = "player2Card3";
+            this.player2Card3.ReadOnly = true;
+            this.player2Card3.Size = new System.Drawing.Size(91, 18);
+            this.player2Card3.TabIndex = 17;
+            this.player2Card3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(132, 95);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 20);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Player 1";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(132, 262);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 20);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Player 2";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cardPic5);
-            this.Controls.Add(this.cardPic4);
-            this.Controls.Add(this.cardPic3);
-            this.Controls.Add(this.cardPic2);
-            this.Controls.Add(this.cardPic1);
-            this.Controls.Add(this.card1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.player2Pic5);
+            this.Controls.Add(this.player2Pic4);
+            this.Controls.Add(this.player2Pic3);
+            this.Controls.Add(this.player2Pic2);
+            this.Controls.Add(this.player2Pic1);
+            this.Controls.Add(this.player2Card1);
+            this.Controls.Add(this.player2Card5);
+            this.Controls.Add(this.player2Card4);
+            this.Controls.Add(this.player2Card2);
+            this.Controls.Add(this.player2Card3);
+            this.Controls.Add(this.numOfPlayers);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.player1Pic5);
+            this.Controls.Add(this.player1Pic4);
+            this.Controls.Add(this.player1Pic3);
+            this.Controls.Add(this.player1Pic2);
+            this.Controls.Add(this.player1Pic1);
+            this.Controls.Add(this.player1Card1);
             this.Controls.Add(this.evaluationLabel);
             this.Controls.Add(this.evaluationButton);
             this.Controls.Add(this.shuffleButton);
-            this.Controls.Add(this.handLabel);
-            this.Controls.Add(this.card5);
-            this.Controls.Add(this.card4);
-            this.Controls.Add(this.card2);
-            this.Controls.Add(this.card3);
+            this.Controls.Add(this.player1Card5);
+            this.Controls.Add(this.player1Card4);
+            this.Controls.Add(this.player1Card2);
+            this.Controls.Add(this.player1Card3);
             this.Name = "Form1";
             this.Text = "Poker Evaluation";
-            ((System.ComponentModel.ISupportInitialize)(this.cardPic1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardPic2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardPic3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardPic4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardPic5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player1Pic1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player1Pic2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player1Pic3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player1Pic4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player1Pic5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player2Pic5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player2Pic4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player2Pic3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player2Pic2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player2Pic1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox card3;
-        private System.Windows.Forms.TextBox card2;
-        private System.Windows.Forms.TextBox card4;
-        private System.Windows.Forms.TextBox card5;
-        private System.Windows.Forms.Label handLabel;
+        private System.Windows.Forms.TextBox player1Card3;
+        private System.Windows.Forms.TextBox player1Card2;
+        private System.Windows.Forms.TextBox player1Card4;
+        private System.Windows.Forms.TextBox player1Card5;
         private System.Windows.Forms.Button shuffleButton;
         private System.Windows.Forms.Button evaluationButton;
         private System.Windows.Forms.TextBox evaluationLabel;
-        private System.Windows.Forms.TextBox card1;
-        private System.Windows.Forms.PictureBox cardPic1;
-        private System.Windows.Forms.PictureBox cardPic2;
-        private System.Windows.Forms.PictureBox cardPic3;
-        private System.Windows.Forms.PictureBox cardPic4;
-        private System.Windows.Forms.PictureBox cardPic5;
+        private System.Windows.Forms.TextBox player1Card1;
+        private System.Windows.Forms.PictureBox player1Pic1;
+        private System.Windows.Forms.PictureBox player1Pic2;
+        private System.Windows.Forms.PictureBox player1Pic3;
+        private System.Windows.Forms.PictureBox player1Pic4;
+        private System.Windows.Forms.PictureBox player1Pic5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox numOfPlayers;
+        private System.Windows.Forms.PictureBox player2Pic5;
+        private System.Windows.Forms.PictureBox player2Pic4;
+        private System.Windows.Forms.PictureBox player2Pic3;
+        private System.Windows.Forms.PictureBox player2Pic2;
+        private System.Windows.Forms.PictureBox player2Pic1;
+        private System.Windows.Forms.TextBox player2Card1;
+        private System.Windows.Forms.TextBox player2Card5;
+        private System.Windows.Forms.TextBox player2Card4;
+        private System.Windows.Forms.TextBox player2Card2;
+        private System.Windows.Forms.TextBox player2Card3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 
