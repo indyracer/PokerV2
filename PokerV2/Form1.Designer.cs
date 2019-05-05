@@ -41,8 +41,7 @@
             this.player1Pic3 = new System.Windows.Forms.PictureBox();
             this.player1Pic4 = new System.Windows.Forms.PictureBox();
             this.player1Pic5 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.numOfPlayers = new System.Windows.Forms.TextBox();
+            this.players = new System.Windows.Forms.Label();
             this.player2Pic5 = new System.Windows.Forms.PictureBox();
             this.player2Pic4 = new System.Windows.Forms.PictureBox();
             this.player2Pic3 = new System.Windows.Forms.PictureBox();
@@ -55,6 +54,9 @@
             this.player2Card3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.player1Evaluation = new System.Windows.Forms.TextBox();
+            this.player2Evaluation = new System.Windows.Forms.TextBox();
+            this.numOfPlayers = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.player1Pic1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player1Pic2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player1Pic3)).BeginInit();
@@ -114,7 +116,7 @@
             // shuffleButton
             // 
             this.shuffleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shuffleButton.Location = new System.Drawing.Point(12, 185);
+            this.shuffleButton.Location = new System.Drawing.Point(619, 1);
             this.shuffleButton.Name = "shuffleButton";
             this.shuffleButton.Size = new System.Drawing.Size(119, 31);
             this.shuffleButton.TabIndex = 6;
@@ -199,22 +201,15 @@
             this.player1Pic5.TabIndex = 14;
             this.player1Pic5.TabStop = false;
             // 
-            // label1
+            // players
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(39, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 47);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Number of Players\r\n(Max 2)";
-            this.label1.UseMnemonic = false;
-            // 
-            // numOfPlayers
-            // 
-            this.numOfPlayers.Location = new System.Drawing.Point(203, 13);
-            this.numOfPlayers.Name = "numOfPlayers";
-            this.numOfPlayers.Size = new System.Drawing.Size(100, 20);
-            this.numOfPlayers.TabIndex = 16;
+            this.players.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.players.Location = new System.Drawing.Point(39, 13);
+            this.players.Name = "players";
+            this.players.Size = new System.Drawing.Size(201, 19);
+            this.players.TabIndex = 15;
+            this.players.Text = "Number of Players (Max 2)";
+            this.players.UseMnemonic = false;
             // 
             // player2Pic5
             // 
@@ -320,27 +315,63 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(132, 95);
+            this.label2.Location = new System.Drawing.Point(23, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 27;
             this.label2.Text = "Player 1";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(132, 262);
+            this.label3.Location = new System.Drawing.Point(23, 209);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 20);
             this.label3.TabIndex = 28;
             this.label3.Text = "Player 2";
+            // 
+            // player1Evaluation
+            // 
+            this.player1Evaluation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player1Evaluation.Location = new System.Drawing.Point(27, 77);
+            this.player1Evaluation.Multiline = true;
+            this.player1Evaluation.Name = "player1Evaluation";
+            this.player1Evaluation.ReadOnly = true;
+            this.player1Evaluation.Size = new System.Drawing.Size(155, 27);
+            this.player1Evaluation.TabIndex = 29;
+            this.player1Evaluation.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // player2Evaluation
+            // 
+            this.player2Evaluation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player2Evaluation.Location = new System.Drawing.Point(27, 244);
+            this.player2Evaluation.Multiline = true;
+            this.player2Evaluation.Name = "player2Evaluation";
+            this.player2Evaluation.ReadOnly = true;
+            this.player2Evaluation.Size = new System.Drawing.Size(155, 27);
+            this.player2Evaluation.TabIndex = 30;
+            this.player2Evaluation.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // numOfPlayers
+            // 
+            this.numOfPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numOfPlayers.Location = new System.Drawing.Point(235, 11);
+            this.numOfPlayers.Mask = "0";
+            this.numOfPlayers.Name = "numOfPlayers";
+            this.numOfPlayers.Size = new System.Drawing.Size(100, 26);
+            this.numOfPlayers.TabIndex = 31;
+            this.numOfPlayers.ValidatingType = typeof(int);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.numOfPlayers);
+            this.Controls.Add(this.player2Evaluation);
+            this.Controls.Add(this.player1Evaluation);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.player2Pic5);
@@ -353,8 +384,7 @@
             this.Controls.Add(this.player2Card4);
             this.Controls.Add(this.player2Card2);
             this.Controls.Add(this.player2Card3);
-            this.Controls.Add(this.numOfPlayers);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.players);
             this.Controls.Add(this.player1Pic5);
             this.Controls.Add(this.player1Pic4);
             this.Controls.Add(this.player1Pic3);
@@ -399,8 +429,7 @@
         private System.Windows.Forms.PictureBox player1Pic3;
         private System.Windows.Forms.PictureBox player1Pic4;
         private System.Windows.Forms.PictureBox player1Pic5;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox numOfPlayers;
+        private System.Windows.Forms.Label players;
         private System.Windows.Forms.PictureBox player2Pic5;
         private System.Windows.Forms.PictureBox player2Pic4;
         private System.Windows.Forms.PictureBox player2Pic3;
@@ -413,6 +442,9 @@
         private System.Windows.Forms.TextBox player2Card3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox player1Evaluation;
+        private System.Windows.Forms.TextBox player2Evaluation;
+        private System.Windows.Forms.MaskedTextBox numOfPlayers;
     }
 }
 
