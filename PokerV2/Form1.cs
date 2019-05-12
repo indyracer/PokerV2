@@ -20,11 +20,12 @@ namespace PokerV2
         //Array to hold pictures of cards
         Image[] cardImages;
         //creates Deck for playing
-        static Deck deck = new Deck();
+        static Deck deck;
         //array to hold player hands
         Card[][] playerHands;
         //hold previous hand's number of players, used to clear if needed
         int previousHandPLayers;
+        int numPlayers = 0;
 
 
         public void label2_Click (object sender, EventArgs e)
@@ -69,54 +70,66 @@ namespace PokerV2
             player2Pic4.Image = null;
             player2Pic5.Image = null;
 
-            //start new hand
-            int numPlayers = Int32.Parse(numOfPlayers.Text);
+            deck = new Deck(); //creates new deck when shuffling
 
-            if (numPlayers > 2 || numPlayers < 0)
+
+            //start new hand
+            try
+            {
+                numPlayers = Int32.Parse(numOfPlayers.Text);
+
+                if (numPlayers > 2 || numPlayers < 0)
+                {
+                    MessageBox.Show("Please input 1 or 2 players");
+                }
+                else
+                {
+
+                    previousHandPLayers = numPlayers;
+                    //deal hands to each player
+                    //array of player hands
+                    playerHands = new Card[numPlayers][];
+
+
+
+                    for (int x = 0; x < numPlayers; x++)
+                    {
+                        Card[] player = DealHands();
+                        playerHands[x] = player;
+                    }
+
+
+                    player1Card1.Text = playerHands[0][0].DisplayCard();
+                    player1Card2.Text = playerHands[0][1].DisplayCard();
+                    player1Card3.Text = playerHands[0][2].DisplayCard();
+                    player1Card4.Text = playerHands[0][3].DisplayCard();
+                    player1Card5.Text = playerHands[0][4].DisplayCard();
+
+                    player1Pic1.Image = DisplayImage(playerHands[0][0]);
+                    player1Pic2.Image = DisplayImage(playerHands[0][1]);
+                    player1Pic3.Image = DisplayImage(playerHands[0][2]);
+                    player1Pic4.Image = DisplayImage(playerHands[0][3]);
+                    player1Pic5.Image = DisplayImage(playerHands[0][4]);
+
+                    if (numPlayers == 2)
+                    {
+                        player2Card1.Text = playerHands[1][0].DisplayCard();
+                        player2Card2.Text = playerHands[1][1].DisplayCard();
+                        player2Card3.Text = playerHands[1][2].DisplayCard();
+                        player2Card4.Text = playerHands[1][3].DisplayCard();
+                        player2Card5.Text = playerHands[1][4].DisplayCard();
+
+                        player2Pic1.Image = DisplayImage(playerHands[1][0]);
+                        player2Pic2.Image = DisplayImage(playerHands[1][1]);
+                        player2Pic3.Image = DisplayImage(playerHands[1][2]);
+                        player2Pic4.Image = DisplayImage(playerHands[1][3]);
+                        player2Pic5.Image = DisplayImage(playerHands[1][4]);
+                    }
+                }
+            }
+            catch (Exception exp)
             {
                 MessageBox.Show("Please input 1 or 2 players");
-            }
-            else
-            {
-
-                previousHandPLayers = numPlayers;
-                //deal hands to each player
-                //array of player hands
-                playerHands = new Card[numPlayers][];
-
-                for (int x = 0; x < numPlayers; x++)
-                {
-                    Card[] player = DealHands();
-                    playerHands[x] = player;
-                }
-
-
-                player1Card1.Text = playerHands[0][0].DisplayCard();
-                player1Card2.Text = playerHands[0][1].DisplayCard();
-                player1Card3.Text = playerHands[0][2].DisplayCard();
-                player1Card4.Text = playerHands[0][3].DisplayCard();
-                player1Card5.Text = playerHands[0][4].DisplayCard();
-
-                player1Pic1.Image = DisplayImage(playerHands[0][0]);
-                player1Pic2.Image = DisplayImage(playerHands[0][1]);
-                player1Pic3.Image = DisplayImage(playerHands[0][2]);
-                player1Pic4.Image = DisplayImage(playerHands[0][3]);
-                player1Pic5.Image = DisplayImage(playerHands[0][4]);
-
-                if (numPlayers == 2)
-                {
-                    player2Card1.Text = playerHands[1][0].DisplayCard();
-                    player2Card2.Text = playerHands[1][1].DisplayCard();
-                    player2Card3.Text = playerHands[1][2].DisplayCard();
-                    player2Card4.Text = playerHands[1][3].DisplayCard();
-                    player2Card5.Text = playerHands[1][4].DisplayCard();
-
-                    player2Pic1.Image = DisplayImage(playerHands[1][0]);
-                    player2Pic2.Image = DisplayImage(playerHands[1][1]);
-                    player2Pic3.Image = DisplayImage(playerHands[1][2]);
-                    player2Pic4.Image = DisplayImage(playerHands[1][3]);
-                    player2Pic5.Image = DisplayImage(playerHands[1][4]);
-                }
             }
         }
 
@@ -135,11 +148,31 @@ namespace PokerV2
                 if (numPlayers == 2)
                 {
                     player2Evaluation.Text = EvaluateHand(playerHands[1]);
+
+                    int player1Points = PlayerHandPoints(playerHands[0]);
+                    int player2Points = PlayerHandPoints(playerHands[1]);
+
+                    if (player1Points > player2Points)
+                    {
+                        evaluationLabel.Text = "Player 1's " + player1Evaluation.Text +
+                            " beats Player 2's " + player2Evaluation.Text;
+                    }
+                    else if (player2Points > player1Points)
+                    {
+                        evaluationLabel.Text = "Player 2's " + player2Evaluation.Text +
+                           " beats Player 3's " + player1Evaluation.Text;
+                    }
+                    else
+                    {
+                        evaluationLabel.Text = "Tie for now, will determine winner of ties later";
+                    }
                 }
             } catch(Exception ex)
             {
                 MessageBox.Show("Make sure to deal a hand first!");
             }
+
+            
         }
 
         
@@ -192,7 +225,48 @@ namespace PokerV2
             return evaluation;
         }
 
-        //deal hands
+        //assign point value to hand, so you can evaluate which player had higher hand
+        internal static int PlayerHandPoints (Card[] hand)
+        {
+            String playerResult = EvaluateHand(hand);
+            int playerPoint = 0;
+            switch (playerResult)
+            {
+                case "Pair":
+                    playerPoint = 1;
+                    break;
+                case "Two Pair":
+                    playerPoint = 2;
+                    break;
+                case "Three of a Kind":
+                    playerPoint = 3;
+                    break;
+                case "Straight":
+                    playerPoint = 4;
+                    break;
+                case "Flush":
+                    playerPoint = 5;
+                    break;
+                case "Full House":
+                    playerPoint = 6;
+                    break;
+                case "Four of a Kind":
+                    playerPoint = 7;
+                    break;
+                case "Straight Flush":
+                    playerPoint = 8;
+                    break;
+                default:
+                    playerPoint = 0;
+                    break;
+            }
+            return playerPoint;
+        }
+
+
+        //deal hands 
+        //need to rethink if this is right place to shuffle with multiple players.  
+        //potential for same card to be in 2 hands.
         internal static Card[] DealHands()
         {
             Card[] hand = new Card[5];

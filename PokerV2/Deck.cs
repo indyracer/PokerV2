@@ -48,7 +48,8 @@ namespace PokerV2
 
         public Card DealCard()
         {
-            return deck[++currentCard];
+           return deck[++currentCard];
+            
         }
 
 
