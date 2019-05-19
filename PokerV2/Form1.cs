@@ -91,6 +91,8 @@ namespace PokerV2
                     playerHands = new Card[numPlayers][];
 
 
+                    deck.Shuffle();
+
 
                     for (int x = 0; x < numPlayers; x++)
                     {
@@ -162,9 +164,23 @@ namespace PokerV2
                         evaluationLabel.Text = "Player 2's " + player2Evaluation.Text +
                            " beats Player 3's " + player1Evaluation.Text;
                     }
-                    else
+                    else //tie...ceck highcard for winner..need to work on additional logic
+                    //scenario:  pair of tens...high card is less than 10.  Need to figure out that logic
                     {
-                        evaluationLabel.Text = "Tie for now, will determine winner of ties later";
+                        int player1HighCard = HighCard(playerHands[0]);
+                        int player2HighCard = HighCard(playerHands[1]);
+
+                        if (player1HighCard > player2HighCard)
+                        {
+                            evaluationLabel.Text = "Player 1 wins with higher " + player1Evaluation.Text;
+                        } else if (player2HighCard > player1HighCard)
+                        {
+                            evaluationLabel.Text = "Player 2 wins with higher " + player2Evaluation.Text;
+                        } else
+                        {
+                            evaluationLabel.Text = "Tie...both players have same hand";
+                        }
+                        
                     }
                 }
             } catch(Exception ex)
@@ -271,7 +287,7 @@ namespace PokerV2
         {
             Card[] hand = new Card[5];
 
-            deck.Shuffle();
+            //deck.Shuffle();
 
             hand[0] = deck.DealCard();
             hand[1] = deck.DealCard();
@@ -370,6 +386,21 @@ namespace PokerV2
             sevenScore, eightScore, nineScore, tenScore, jackScore, queenScore, kingScore, aceScore};
 
             return faceScores;
+        }
+
+        //evaluate hand, calculate high card in hand
+        internal static int HighCard(Card[] hand)
+        {
+            int highCard = 0; //use te index of the card with score higher than 0.  Last card will be highcard
+            int[] scores = FaceScore(hand);
+            for(int i = 0; i < scores.Length; i++)
+            {
+                if(scores[i] > 0)
+                {
+                    highCard = i;
+                }
+            }
+            return highCard;
         }
 
         //evaluate hand, check if pair
