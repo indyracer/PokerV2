@@ -286,6 +286,7 @@
     <None Include="Resources\king_of_spades2.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Poker Hands Tie Evaluations" />
     <None Include="Resources\queen_of_clubs.png" />
   </ItemGroup>
   <ItemGroup>

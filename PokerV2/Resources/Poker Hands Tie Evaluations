@@ -1,0 +1,20 @@
+how to determine winner of tie hands (same rank)....high cards
+
+FaceScore method returns array of point per card.  look at pattern for non-flush hands
+
+1.  High Card, Straight & Straight Flush
+	find index of highest card in array
+	reverse loop (start at last element in array and work backwards)
+	
+2.  Pair, Two Pair
+	Find index of highest non-pair card (point value for card == 1)
+	reverse loop (start at last element in array and work backwards)
+	
+3.  Three of a Kind, Four of a Kind, Full House
+	Find which hand has the higher collection, index of the collection
+	Three of a Kind:  look for index where value == 3
+	Four of a kind:  look for index where value == 4
+	
+4.  Royal Flush
+	Tie...no such thing as higher hand
+	

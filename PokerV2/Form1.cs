@@ -26,6 +26,7 @@ namespace PokerV2
         //hold previous hand's number of players, used to clear if needed
         int previousHandPLayers;
         int numPlayers = 0;
+        
 
 
         public void label2_Click (object sender, EventArgs e)
@@ -167,19 +168,22 @@ namespace PokerV2
                     else //tie...ceck highcard for winner..need to work on additional logic
                     //scenario:  pair of tens...high card is less than 10.  Need to figure out that logic
                     {
-                        int player1HighCard = HighCard(playerHands[0]);
-                        int player2HighCard = HighCard(playerHands[1]);
+                        int tieRank = player1Points;
+                        int[] player1Indices = new int[2];
+                        int[] player2Indices = new int[2];
+                        int player1HighIndex = 0;
+                        int player2HigtIndex = 0;
+                        int player1Single = 0;
+                        int player2Single = 0;
+                        
 
-                        if (player1HighCard > player2HighCard)
+                        if (tieRank == 0 || tieRank == 4 || tieRank == 8)
                         {
-                            evaluationLabel.Text = "Player 1 wins with higher " + player1Evaluation.Text;
-                        } else if (player2HighCard > player1HighCard)
-                        {
-                            evaluationLabel.Text = "Player 2 wins with higher " + player2Evaluation.Text;
-                        } else
-                        {
-                            evaluationLabel.Text = "Tie...both players have same hand";
+                            evaluationLabel.Text = TieEvalHighStraight(playerHands[0], playerHands[1]);
                         }
+
+                         else
+                            evaluationLabel.Text = "Tie hand....working on tie hand evaluation functionality";
                         
                     }
                 }
@@ -271,6 +275,9 @@ namespace PokerV2
                     break;
                 case "Straight Flush":
                     playerPoint = 8;
+                    break;
+                case "Royal Flush":
+                    playerPoint = 9;
                     break;
                 default:
                     playerPoint = 0;
@@ -388,20 +395,7 @@ namespace PokerV2
             return faceScores;
         }
 
-        //evaluate hand, calculate high card in hand
-        internal static int HighCard(Card[] hand)
-        {
-            int highCard = 0; //use te index of the card with score higher than 0.  Last card will be highcard
-            int[] scores = FaceScore(hand);
-            for(int i = 0; i < scores.Length; i++)
-            {
-                if(scores[i] > 0)
-                {
-                    highCard = i;
-                }
-            }
-            return highCard;
-        }
+        
 
         //evaluate hand, check if pair
         internal static Boolean IsPair(Card[] hand)
@@ -612,6 +606,42 @@ namespace PokerV2
             return isRoyalFlush;
         }
 
+
+        //evaluate tie hands
+        //high card, straight, straight flush
+        internal static String TieEvalHighStraight(Card[] hand1, Card[] hand2)
+        {
+            int[] hand1Scores = FaceScore(hand1);
+            int[] hand2Scores = FaceScore(hand2);
+
+            int player1HighIndex = 0;
+            int player2HighIndex = 0;
+
+            for (int i = hand1Scores.Length - 1; i >= 0; i--)
+            {
+                if(hand1Scores[i] == 1)
+                {
+                    player1HighIndex = i;
+                    break;
+                }
+            }
+
+            for(int i = hand2Scores.Length - 1; i >= 0; i--)
+            {
+                if(hand2Scores[i] == 1)
+                {
+                    player2HighIndex = i;
+                    break;
+                }
+            }
+
+            if (player1HighIndex > player2HighIndex)
+                return "Tie...Player 1 wins with higher hand";
+            else if (player1HighIndex < player2HighIndex)
+                return "Tie...Player 2 wins with higher hand";
+            else
+                return "Tie...hands are of equal value";
+        }
 
 
         //displayImage
