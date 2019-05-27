@@ -163,23 +163,21 @@ namespace PokerV2
                     else if (player2Points > player1Points)
                     {
                         evaluationLabel.Text = "Player 2's " + player2Evaluation.Text +
-                           " beats Player 3's " + player1Evaluation.Text;
+                           " beats Player 1's " + player1Evaluation.Text;
                     }
                     else //tie...ceck highcard for winner..need to work on additional logic
                     //scenario:  pair of tens...high card is less than 10.  Need to figure out that logic
                     {
-                        int tieRank = player1Points;
-                        int[] player1Indices = new int[2];
-                        int[] player2Indices = new int[2];
-                        int player1HighIndex = 0;
-                        int player2HigtIndex = 0;
-                        int player1Single = 0;
-                        int player2Single = 0;
-                        
+                        int tieRank = player1Points; //already determined it's a tie.  Need to know what type of rank
+                                              
 
                         if (tieRank == 0 || tieRank == 4 || tieRank == 8)
                         {
                             evaluationLabel.Text = TieEvalHighStraight(playerHands[0], playerHands[1]);
+                        }
+                        else if (tieRank == 1)
+                        {
+                            evaluationLabel.Text = TieEvalPair(playerHands[0], playerHands[1]);
                         }
 
                          else
@@ -613,34 +611,61 @@ namespace PokerV2
         {
             int[] hand1Scores = FaceScore(hand1);
             int[] hand2Scores = FaceScore(hand2);
+            string message = "Tie...hands have the same value";
 
-            int player1HighIndex = 0;
-            int player2HighIndex = 0;
-
-            for (int i = hand1Scores.Length - 1; i >= 0; i--)
+            for(int i = hand1Scores.Length - 1; i >= 0; i--)
             {
-                if(hand1Scores[i] == 1)
+                if(hand1Scores[i] > hand2Scores[i])
                 {
-                    player1HighIndex = i;
+                    
+                    message = "Tie...Player 1 wins with high card";
                     break;
+                }
+                else if(hand1Scores[i] < hand2Scores[i])
+                {
+                    message =  "Tie...Player 2 wins with high card";
+                    break;
+
+                }
+
+            }
+
+            return message;
+        }
+
+        internal static String TieEvalPair(Card [] hand1, Card [] hand2)
+        {
+            int[] hand1Scores = FaceScore(hand1);
+            int[] hand2Scores = FaceScore(hand2);
+            string message = "Tie...hands have the same value";
+
+
+            //look for highest value of 2 in indices
+            if(Array.LastIndexOf(hand1Scores, 2) > Array.LastIndexOf(hand2Scores, 2))
+            {
+                message = "Tie...Player 1 wins with higher Pair";
+            } else if(Array.LastIndexOf(hand1Scores, 2) < Array.LastIndexOf(hand2Scores, 2))
+            {
+                message = "Tie..Player 2 wins with higher Pair";
+            } else
+            {
+                //pairs are of same value...so need to check high cards
+               for(int i = hand1Scores.Length - 1; i >= 0; i--)
+                {
+                    if(hand1Scores[i] == 1 || hand2Scores[i] == 1)
+                    {
+                        if(hand1Scores[i] > hand2Scores[i])
+                        {
+                            message = "Tie...Player 1 wins with high card";
+                        } else if(hand1Scores[i] < hand2Scores[i])
+                        {
+                            message = "Tie...Player 2 wins with high card";
+                        }
+                    }
                 }
             }
 
-            for(int i = hand2Scores.Length - 1; i >= 0; i--)
-            {
-                if(hand2Scores[i] == 1)
-                {
-                    player2HighIndex = i;
-                    break;
-                }
-            }
-
-            if (player1HighIndex > player2HighIndex)
-                return "Tie...Player 1 wins with higher hand";
-            else if (player1HighIndex < player2HighIndex)
-                return "Tie...Player 2 wins with higher hand";
-            else
-                return "Tie...hands are of equal value";
+            return message;
         }
 
 
