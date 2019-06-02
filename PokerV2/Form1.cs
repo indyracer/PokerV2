@@ -171,17 +171,33 @@ namespace PokerV2
                         int tieRank = player1Points; //already determined it's a tie.  Need to know what type of rank
                                               
 
-                        if (tieRank == 0 || tieRank == 4 || tieRank == 8)
+                        if (tieRank == 0 || tieRank == 4 || tieRank == 5 || tieRank == 8) //higher card, flush, straight and straigth flush
                         {
                             evaluationLabel.Text = TieEvalHighStraight(playerHands[0], playerHands[1]);
                         }
-                        else if (tieRank == 1)
+                        else if (tieRank == 1)  //pair tie
                         {
                             evaluationLabel.Text = TieEvalPair(playerHands[0], playerHands[1]);
                         }
+                        else if(tieRank == 2) //two pair
+                        {
+                            evaluationLabel.Text = TieTwoPairEval(playerHands[0], playerHands[1]);
+                        }
+                        else if(tieRank == 3) //three of a kind
+                        {
+                            evaluationLabel.Text = TieThreeKindEval(playerHands[0], playerHands[1]);
+                        }
+                        else if(tieRank == 6) //full house
+                        {
+                            evaluationLabel.Text = TieFullHouseEval(playerHands[0], playerHands[1]);
+                        }
+                        else if(tieRank == 7) //four of kind
+                        {
+                            evaluationLabel.Text = TieFourKindEval(playerHands[0], playerHands[1]);
+                        }
 
                          else
-                            evaluationLabel.Text = "Tie hand....working on tie hand evaluation functionality";
+                            evaluationLabel.Text = "Tie hand...hands have the same value";
                         
                     }
                 }
@@ -663,6 +679,131 @@ namespace PokerV2
                         }
                     }
                 }
+            }
+
+            return message;
+        }
+
+        internal static String TieTwoPairEval(Card[] hand1, Card[] hand2)
+        {
+
+            int[] hand1Scores = FaceScore(hand1);
+            int[] hand2Scores = FaceScore(hand2);
+            string message = "Tie...hands have the same value";
+
+
+            //look for highest value of 2 in indices
+            if (Array.LastIndexOf(hand1Scores, 2) > Array.LastIndexOf(hand2Scores, 2))
+            {
+                message = "Tie...Player 1 wins with higher Pair";
+            }
+            else if (Array.LastIndexOf(hand1Scores, 2) < Array.LastIndexOf(hand2Scores, 2))
+            {
+                message = "Tie..Player 2 wins with higher Pair";
+            }
+            else if(Array.IndexOf(hand1Scores,2) > Array.IndexOf(hand2Scores, 2))
+            {
+                message = "Tie...Player 1 wins with higher Pair";
+            }
+            else if(Array.IndexOf(hand1Scores, 2) < Array.IndexOf(hand2Scores, 2))
+            {
+                message = "Tie...Player 2 wins with higher pair";
+            }
+            else if(Array.IndexOf(hand1Scores,1) > Array.IndexOf(hand2Scores, 1))
+            {
+                message = "Tie...Player 1 wins with higher card";
+            }
+            else if (Array.IndexOf(hand1Scores,1) < Array.IndexOf(hand2Scores, 1))
+            {
+                message = "Tie...Player 2 wins with higher card";
+            }
+
+            return message;
+
+        }
+
+        internal static String TieThreeKindEval(Card[] hand1, Card[] hand2)
+        {
+            int[] hand1Scores = FaceScore(hand1);
+            int[] hand2Scores = FaceScore(hand2);
+            string message = "Tie...hands have the same value";
+
+            if(Array.LastIndexOf(hand1Scores,3) > Array.LastIndexOf(hand2Scores, 3))
+            {
+                message = "Tie...Player 1 wins with higher Three of a Kind";
+            } 
+            else if (Array.LastIndexOf(hand1Scores,3) < Array.LastIndexOf(hand2Scores, 3))
+            {
+                message = "Tie...Player 2 wins with higher Three of a Kind";
+            }
+            else if(Array.LastIndexOf(hand1Scores,1) > Array.LastIndexOf(hand2Scores, 1))
+            {
+                message = "Tie...Player 1 wins with high card";
+            }
+            else if(Array.LastIndexOf(hand1Scores,1) < Array.LastIndexOf(hand2Scores, 1))
+            {
+                message = "Tie...Player 2 wins with high card";
+            }
+            else if(Array.IndexOf(hand1Scores,1) > Array.IndexOf(hand2Scores, 1))
+            {
+                message = "Tie...Player 1 wins with high card";
+            }
+            else if(Array.LastIndexOf(hand1Scores,1) < Array.IndexOf(hand2Scores, 1))
+            {
+                message = "Tie...Player 2 wins with high card";
+            }
+
+            return message;
+        }
+
+        internal static String TieFullHouseEval(Card[] hand1, Card[] hand2)
+        {
+            int[] hand1Scores = FaceScore(hand1);
+            int[] hand2Scores = FaceScore(hand2);
+            string message = "Tie...hands have the same value";
+
+            if(Array.LastIndexOf(hand1Scores,3) > Array.LastIndexOf(hand2Scores, 3))
+            {
+                message = "Tie...Player 1 wins with higher Full House";
+            }
+            else if(Array.LastIndexOf(hand1Scores,3) < Array.LastIndexOf(hand2Scores, 3))
+            {
+                message = "Tie...Player 2 wins with higher Full House";
+            }
+            else if(Array.LastIndexOf(hand1Scores,2) > Array.LastIndexOf(hand2Scores, 2))
+            {
+                message = "Tie...Player 1 wins with higher Full House";
+            }
+            else if (Array.LastIndexOf(hand1Scores, 2) < Array.LastIndexOf(hand2Scores, 2))
+            {
+                message = "Tie...Player 2 wins with higher Full House";
+            }
+
+            return message;
+
+        }
+
+        internal static String TieFourKindEval(Card[] hand1, Card[] hand2)
+        {
+            int[] hand1Scores = FaceScore(hand1);
+            int[] hand2Scores = FaceScore(hand2);
+            string message = "Tie...hands have the same value";
+
+            if(Array.IndexOf(hand1Scores,4) > Array.IndexOf(hand2Scores, 4))
+            {
+                message = "Tie...Player 1 wins with higher Four of a Kind";
+            }
+            else if (Array.IndexOf(hand1Scores, 4) < Array.IndexOf(hand2Scores, 4))
+            {
+                message = "Tie...Player 2 wins with higher Four of Kind";
+            }
+            else if (Array.IndexOf(hand1Scores, 1) > Array.IndexOf(hand2Scores, 1))
+            {
+                message = "Tie...Player 1 wins with high card";
+            }
+            else if (Array.IndexOf(hand1Scores, 1) < Array.IndexOf(hand2Scores, 1))
+            {
+                message = "Tie...Player 2 wins with high card";
             }
 
             return message;
