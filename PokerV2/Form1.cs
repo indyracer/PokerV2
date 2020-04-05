@@ -16,7 +16,7 @@ namespace PokerV2
 
         Card[] hand = new Card[5];
         //path to get images
-        public const string path = @"C:\\Users\\bobco\\source\\repos\\PokerV2\\PokerV2\\Resources\\";
+        public const string path ="E:\\Bob\\Repos\\PokerV2\\PokerV2\\Resources\\";
         //Array to hold pictures of cards
         Image[] cardImages;
         //creates Deck for playing
